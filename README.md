@@ -3,7 +3,7 @@
 ## Descrição
 "Sobrevivência Zumbi: A Última Resistência" é um jogo de sobrevivência em um apocalipse zumbi, desenvolvido em **Godot Engine**. O jogador assume o papel de um sobrevivente em uma cidade devastada, onde deve explorar, coletar suprimentos e se defender contra hordas de zumbis. O jogo apresenta desafios crescentes, minibosses e um chefe final, exigindo estratégia e habilidade para sobreviver o máximo possível.
 
-![Zombie Apocalypse Tileset](https://ittaimanero.itch.io/zombie-apocalypse-tileset)
+![Zombie Apocalypse Tileset](https://img.itch.zone/aW1nLzYzNjQyODUucG5n/original/0Ja7Oa.png)
 
 ## História
 Em um mundo pós-apocalíptico, você é um dos poucos sobreviventes em uma cidade devastada por zumbis. Com recursos escassos, você deve explorar o ambiente hostil, enfrentando hordas cada vez maiores de mortos-vivos. Sua missão é coletar suprimentos, resgatar sobreviventes e defender áreas estratégicas. A cada dia que passa, o desafio aumenta e você precisará usar todas as suas habilidades para enfrentar os zumbis comuns, minibosses e o poderoso chefe final.
