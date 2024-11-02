@@ -1,0 +1,72 @@
+[gd_scene load_steps=12 format=3 uid="uid://c2ngwvfiq8bnm"]
+
+[ext_resource type="Texture2D" uid="uid://bo1mt4rrv4mbc" path="res://art/Organized separated sprites/Modular Small Building/Zombie-Tileset---_0098_Capa-99.png" id="1_abx04"]
+[ext_resource type="Texture2D" uid="uid://b56hyrr4arwg1" path="res://art/Organized separated sprites/Modular Small Building/Zombie-Tileset---_0097_Capa-98.png" id="2_l5o8d"]
+[ext_resource type="Texture2D" uid="uid://cpg6a1ie4dujc" path="res://art/Organized separated sprites/Modular Small Building/Zombie-Tileset---_0092_Capa-93.png" id="3_g5fnc"]
+[ext_resource type="Texture2D" uid="uid://e081fsy5jt8y" path="res://art/Organized separated sprites/Modular Small Building/Zombie-Tileset---_0104_Capa-105.png" id="4_4vce8"]
+[ext_resource type="Texture2D" uid="uid://b5u2rr45qsex5" path="res://art/Organized separated sprites/Modular Small Building/Zombie-Tileset---_0105_Capa-106.png" id="5_36vry"]
+[ext_resource type="Texture2D" uid="uid://ddliwmj3h7jf3" path="res://art/Organized separated sprites/Modular Small Building/Zombie-Tileset---_0091_Capa-92.png" id="6_65ypr"]
+[ext_resource type="Texture2D" uid="uid://teng45ws611y" path="res://art/Organized separated sprites/Modular Small Building/Zombie-Tileset---_0100_Capa-101.png" id="7_v8los"]
+[ext_resource type="Texture2D" uid="uid://e5pdc813nqqw" path="res://art/Organized separated sprites/Modular Small Building/Zombie-Tileset---_0093_Capa-94.png" id="8_2qejs"]
+[ext_resource type="Texture2D" uid="uid://jl2knmgddg77" path="res://art/Organized separated sprites/Modular Small Building/Zombie-Tileset---_0103_Capa-104.png" id="9_elakm"]
+[ext_resource type="Texture2D" uid="uid://crmm6xmc2d1ic" path="res://art/Organized separated sprites/Modular Small Building/Zombie-Tileset---_0094_Capa-95.png" id="10_ksgsx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q4mrr"]
+size = Vector2(48.5, 29)
+
+[node name="small contruction" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(15, 14)
+texture = ExtResource("1_abx04")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(15, 26)
+texture = ExtResource("2_l5o8d")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(-1, 14)
+texture = ExtResource("3_g5fnc")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(31, 14)
+texture = ExtResource("4_4vce8")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(31, 26)
+texture = ExtResource("5_36vry")
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+position = Vector2(-1, 26)
+texture = ExtResource("6_65ypr")
+
+[node name="Sprite2D7" type="Sprite2D" parent="."]
+position = Vector2(15, -2)
+texture = ExtResource("7_v8los")
+
+[node name="Sprite2D8" type="Sprite2D" parent="."]
+position = Vector2(-1, -13)
+texture = ExtResource("8_2qejs")
+
+[node name="Sprite2D9" type="Sprite2D" parent="."]
+position = Vector2(31, -13)
+texture = ExtResource("9_elakm")
+
+[node name="Sprite2D10" type="Sprite2D" parent="."]
+position = Vector2(15, -13)
+texture = ExtResource("10_ksgsx")
+
+[node name="Sprite2D11" type="Sprite2D" parent="."]
+position = Vector2(31, -2)
+texture = ExtResource("4_4vce8")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(14.75, 20.5)
+shape = SubResource("RectangleShape2D_q4mrr")
+
+[node name="Sprite2D12" type="Sprite2D" parent="."]
+position = Vector2(-1, -2)
+texture = ExtResource("3_g5fnc")

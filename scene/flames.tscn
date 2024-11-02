@@ -1,0 +1,53 @@
+[gd_scene load_steps=11 format=3 uid="uid://jacxcdtrepq2"]
+
+[ext_resource type="Script" path="res://scene/flames.gd" id="1_itvkm"]
+[ext_resource type="Texture2D" uid="uid://dkda6suombd4h" path="res://art/flames/Fogo_1.png" id="1_omin3"]
+[ext_resource type="Texture2D" uid="uid://divar5omfxuat" path="res://art/flames/Fogo_2.png" id="2_an6k2"]
+[ext_resource type="Texture2D" uid="uid://b7u8fvbrxsjns" path="res://art/flames/Fogo_3.png" id="3_6a1li"]
+[ext_resource type="Texture2D" uid="uid://h60as5d0n3hb" path="res://art/flames/Fogo_4.png" id="4_tr20h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04kns"]
+atlas = ExtResource("1_omin3")
+region = Rect2(512, 512, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mskc4"]
+atlas = ExtResource("2_an6k2")
+region = Rect2(512, 512, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nomkq"]
+atlas = ExtResource("3_6a1li")
+region = Rect2(512, 512, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8sb15"]
+atlas = ExtResource("4_tr20h")
+region = Rect2(512, 512, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uo66c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_04kns")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mskc4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nomkq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8sb15")
+}],
+"loop": true,
+"name": &"flames",
+"speed": 5.0
+}]
+
+[node name="Flames" type="Node2D"]
+script = ExtResource("1_itvkm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -1)
+scale = Vector2(0.171875, 0.132813)
+sprite_frames = SubResource("SpriteFrames_uo66c")
+animation = &"flames"
+frame_progress = 0.172819

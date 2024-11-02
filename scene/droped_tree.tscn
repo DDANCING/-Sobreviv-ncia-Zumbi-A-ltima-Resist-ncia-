@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cyw1wemaoqfyl"]
+
+[ext_resource type="Texture2D" uid="uid://dc8dt6g0hbg46" path="res://art/Organized separated sprites/Trees/Zombie-Tileset---_0139_Capa-140.png" id="1_r2ebl"]
+[ext_resource type="Texture2D" uid="uid://bqlw5nnv0lqat" path="res://art/Organized separated sprites/Trees/Zombie-Tileset---_0140_Capa-141.png" id="2_jwiww"]
+[ext_resource type="Texture2D" uid="uid://cslld7rrxcg7l" path="res://art/Organized separated sprites/Trees/Zombie-Tileset---_0141_Capa-142.png" id="3_npiiq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lnwix"]
+size = Vector2(44, 8)
+
+[node name="droped_tree" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-11, 0)
+texture = ExtResource("1_r2ebl")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(15, 0)
+texture = ExtResource("2_jwiww")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(30, -2)
+texture = ExtResource("3_npiiq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(4, 0)
+shape = SubResource("RectangleShape2D_lnwix")
