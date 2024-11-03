@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://cvdc17depiuxf"]
+
+[ext_resource type="Script" path="res://inventory/inventory_item.gd" id="1_jjnae"]
+[ext_resource type="Texture2D" uid="uid://b2kiwsfcv6r7v" path="res://art/Organized separated sprites/Pickable Items and Weapons/Zombie-Tileset---_0327_Capa-328.png" id="2_gljds"]
+
+[resource]
+script = ExtResource("1_jjnae")
+name = "Gas"
+texture = ExtResource("2_gljds")

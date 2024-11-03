@@ -1,0 +1,85 @@
+[gd_scene load_steps=11 format=3 uid="uid://q70qvu0mgdfl"]
+
+[ext_resource type="Script" path="res://script/loot_objects.gd" id="1_jjt70"]
+[ext_resource type="Texture2D" uid="uid://t8xpolrbmpfx" path="res://art/Organized separated sprites/Broken Cars and Tires/Zombie-Tileset---_0179_Capa-180.png" id="2_af8pa"]
+[ext_resource type="Texture2D" uid="uid://deteqatq5v8l7" path="res://art/Organized separated sprites/Broken Cars and Tires/Zombie-Tileset---_0180_Capa-181.png" id="3_lqn5r"]
+[ext_resource type="Texture2D" uid="uid://hv3wvo2gqsxd" path="res://art/Organized separated sprites/Pickable Items and Weapons/Zombie-Tileset---_0340_Capa-341.png" id="4_kqp0w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1sxk"]
+atlas = ExtResource("2_af8pa")
+region = Rect2(0, 0, 33, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0risb"]
+atlas = ExtResource("3_lqn5r")
+region = Rect2(0, 0, 33, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xavpu"]
+atlas = ExtResource("4_kqp0w")
+region = Rect2(0, 0, 10, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2q72v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1sxk")
+}],
+"loop": true,
+"name": &"box_loot",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0risb")
+}],
+"loop": true,
+"name": &"box_no_loot",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xavpu")
+}],
+"loop": true,
+"name": &"heath_loot",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_psnyb"]
+size = Vector2(45, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_voyxx"]
+size = Vector2(30, 12)
+
+[node name="loot_objects" type="Node2D"]
+script = ExtResource("1_jjt70")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2q72v")
+animation = &"box_loot"
+
+[node name="pickable_area" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pickable_area"]
+visible = false
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_psnyb")
+
+[node name="growth_timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="Marker2D" type="Marker2D" parent="."]
+visible = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_voyxx")
+
+[connection signal="body_entered" from="pickable_area" to="." method="_on_pickable_area_body_entered"]
+[connection signal="body_exited" from="pickable_area" to="." method="_on_pickable_area_body_exited"]
+[connection signal="timeout" from="growth_timer" to="." method="_on_growth_timer_timeout"]

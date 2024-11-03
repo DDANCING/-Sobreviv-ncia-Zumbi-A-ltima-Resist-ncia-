@@ -1,0 +1,43 @@
+[gd_scene load_steps=9 format=3 uid="uid://cyibh2668wqne"]
+
+[ext_resource type="Script" path="res://script/ELICE.gd" id="1_x716h"]
+[ext_resource type="Texture2D" uid="uid://dilc50te1l7p0" path="res://art/Organized separated sprites/Windmill with Fan Animation Frames/Zombie-Tileset---_0222_Capa-223.png" id="2_78lxu"]
+[ext_resource type="Texture2D" uid="uid://c8yhl6kpikxo1" path="res://art/Organized separated sprites/Windmill with Fan Animation Frames/Zombie-Tileset---_0223_Capa-224.png" id="3_l0bod"]
+[ext_resource type="Texture2D" uid="uid://b6m2xkqh8qjpa" path="res://art/Organized separated sprites/Windmill with Fan Animation Frames/Zombie-Tileset---_0224_Capa-225.png" id="4_tg7mq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2aod2"]
+atlas = ExtResource("2_78lxu")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1bq0k"]
+atlas = ExtResource("3_l0bod")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hooj0"]
+atlas = ExtResource("4_tg7mq")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n363q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2aod2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1bq0k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hooj0")
+}],
+"loop": true,
+"name": &"ELICE",
+"speed": 5.0
+}]
+
+[node name="ELICE" type="Node2D"]
+script = ExtResource("1_x716h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_n363q")
+animation = &"ELICE"
+frame_progress = 0.778387

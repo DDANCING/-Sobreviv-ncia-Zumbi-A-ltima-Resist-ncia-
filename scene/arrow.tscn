@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://dl6dlxfqebgt4"]
+
+[ext_resource type="Script" path="res://script/arrow.gd" id="1_03hvu"]
+[ext_resource type="Texture2D" uid="uid://34lqcv21wyc2" path="res://art/Organized separated sprites/Pickable Items and Weapons/Zombie-Tileset---_0332_Capa-333.png" id="2_dwooc"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ierdk"]
+radius = 1.0
+height = 6.0
+
+[node name="arrow" type="Area2D"]
+script = ExtResource("1_03hvu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-5.96046e-08, 0)
+rotation = 1.5708
+scale = Vector2(0.0674549, 0.371136)
+texture = ExtResource("2_dwooc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_ierdk")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="CollisionShape2D"]
+position = Vector2(-7.45062e-08, -9.53672e-08)
+rotation = -1.5708
+scale = Vector2(0.1, 0.1)
+enable_node_path = NodePath("../..")
+
+[connection signal="screen_exited" from="CollisionShape2D/VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]
