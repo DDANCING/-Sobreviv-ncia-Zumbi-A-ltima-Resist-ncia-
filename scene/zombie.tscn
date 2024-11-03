@@ -1,0 +1,227 @@
+[gd_scene load_steps=42 format=3 uid="uid://bjdurx4sh3nn3"]
+
+[ext_resource type="Texture2D" uid="uid://bu6y6ar17gf3k" path="res://art/Organized separated sprites/Kid Zombie Animation Frames/Zombie-Tileset---_0436_Capa-437.png" id="1_amigb"]
+[ext_resource type="Script" path="res://script/zombie.gd" id="1_h022x"]
+[ext_resource type="Texture2D" uid="uid://dvvb1hoam2b7j" path="res://art/Organized separated sprites/Damaged Kid Zombie Animation Frames/Zombie-Tileset---_0446_Capa-447.png" id="1_pvrfp"]
+[ext_resource type="Texture2D" uid="uid://0s28ugfqhwnk" path="res://art/Organized separated sprites/Kid Zombie Animation Frames/Zombie-Tileset---_0437_Capa-438.png" id="2_fl1t8"]
+[ext_resource type="Texture2D" uid="uid://cyne3t4484g67" path="res://art/Organized separated sprites/Damaged Kid Zombie Animation Frames/Zombie-Tileset---_0447_Capa-448.png" id="2_oq3a1"]
+[ext_resource type="Texture2D" uid="uid://dstqu26pjedi5" path="res://art/Organized separated sprites/Kid Zombie Animation Frames/Zombie-Tileset---_0438_Capa-439.png" id="3_8cirm"]
+[ext_resource type="Texture2D" uid="uid://b0qi68pvfn3at" path="res://art/Organized separated sprites/Damaged Kid Zombie Animation Frames/Zombie-Tileset---_0445_Capa-446.png" id="3_og3oi"]
+[ext_resource type="Texture2D" uid="uid://c5qj28uu2h3sr" path="res://art/Organized separated sprites/Kid Zombie Animation Frames/Zombie-Tileset---_0430_Capa-431.png" id="4_r13tp"]
+[ext_resource type="Texture2D" uid="uid://c5f888q616s0r" path="res://art/Organized separated sprites/Kid Zombie Animation Frames/Zombie-Tileset---_0431_Capa-432.png" id="5_6x7ar"]
+[ext_resource type="Texture2D" uid="uid://c1hdb2tqqbouf" path="res://art/Organized separated sprites/Kid Zombie Animation Frames/Zombie-Tileset---_0432_Capa-433.png" id="6_vpaca"]
+[ext_resource type="Texture2D" uid="uid://qlk1xvc3e84p" path="res://art/Organized separated sprites/Kid Zombie Animation Frames/Zombie-Tileset---_0434_Capa-435.png" id="7_f3kiu"]
+[ext_resource type="Texture2D" uid="uid://cc1yfo6kkv4uw" path="res://art/Organized separated sprites/Damaged Kid Zombie Animation Frames/Zombie-Tileset---_0440_Capa-441.png" id="7_pqtwt"]
+[ext_resource type="Texture2D" uid="uid://c8wax4bjr30p" path="res://art/Organized separated sprites/Kid Zombie Animation Frames/Zombie-Tileset---_0433_Capa-434.png" id="8_gp85h"]
+[ext_resource type="Texture2D" uid="uid://bwxs4csilqxtw" path="res://art/Organized separated sprites/Damaged Kid Zombie Animation Frames/Zombie-Tileset---_0441_Capa-442.png" id="8_v5xmx"]
+[ext_resource type="Texture2D" uid="uid://74g00kvue4qm" path="res://art/Organized separated sprites/Damaged Kid Zombie Animation Frames/Zombie-Tileset---_0439_Capa-440.png" id="9_ucnrw"]
+[ext_resource type="Texture2D" uid="uid://42paj5860g72" path="res://art/Organized separated sprites/Kid Zombie Animation Frames/Zombie-Tileset---_0435_Capa-436.png" id="9_w4odo"]
+[ext_resource type="Texture2D" uid="uid://ckkx3luvbvy5w" path="res://art/Organized separated sprites/Damaged Kid Zombie Animation Frames/Zombie-Tileset---_0443_Capa-444.png" id="13_0j4x4"]
+[ext_resource type="Texture2D" uid="uid://dmbldvq6ca85i" path="res://art/Organized separated sprites/Damaged Kid Zombie Animation Frames/Zombie-Tileset---_0444_Capa-445.png" id="14_0vr3l"]
+[ext_resource type="Texture2D" uid="uid://l4ybld2dxwgc" path="res://art/Organized separated sprites/Damaged Kid Zombie Animation Frames/Zombie-Tileset---_0442_Capa-443.png" id="15_nomod"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vd2sh"]
+atlas = ExtResource("1_pvrfp")
+region = Rect2(0, 0, 12, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_67d3t"]
+atlas = ExtResource("2_oq3a1")
+region = Rect2(0, 0, 12, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4c8gu"]
+atlas = ExtResource("3_og3oi")
+region = Rect2(0, 0, 12, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xbgc"]
+atlas = ExtResource("1_amigb")
+region = Rect2(0, 0, 12, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t8m00"]
+atlas = ExtResource("2_fl1t8")
+region = Rect2(0, 0, 12, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bghe5"]
+atlas = ExtResource("3_8cirm")
+region = Rect2(0, 0, 12, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3qtn"]
+atlas = ExtResource("7_pqtwt")
+region = Rect2(0, 0, 12, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2mqer"]
+atlas = ExtResource("8_v5xmx")
+region = Rect2(0, 0, 12, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fv8ov"]
+atlas = ExtResource("9_ucnrw")
+region = Rect2(0, 0, 12, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q3tvr"]
+atlas = ExtResource("4_r13tp")
+region = Rect2(0, 0, 12, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jxgrv"]
+atlas = ExtResource("5_6x7ar")
+region = Rect2(0, 0, 12, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iode1"]
+atlas = ExtResource("6_vpaca")
+region = Rect2(0, 0, 12, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bsgxt"]
+atlas = ExtResource("13_0j4x4")
+region = Rect2(0, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plgku"]
+atlas = ExtResource("14_0vr3l")
+region = Rect2(0, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hv2p7"]
+atlas = ExtResource("15_nomod")
+region = Rect2(0, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtwut"]
+atlas = ExtResource("7_f3kiu")
+region = Rect2(0, 0, 12, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8fgec"]
+atlas = ExtResource("8_gp85h")
+region = Rect2(0, 0, 8, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mqw6g"]
+atlas = ExtResource("9_w4odo")
+region = Rect2(0, 0, 10, 11)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y3q3b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vd2sh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_67d3t")
+}],
+"loop": true,
+"name": &"n-death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4c8gu")
+}],
+"loop": true,
+"name": &"n-demage",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6xbgc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t8m00")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bghe5")
+}],
+"loop": true,
+"name": &"n-walking",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c3qtn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2mqer")
+}],
+"loop": true,
+"name": &"s-death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fv8ov")
+}],
+"loop": true,
+"name": &"s-demage",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q3tvr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jxgrv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iode1")
+}],
+"loop": true,
+"name": &"s-walking",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bsgxt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_plgku")
+}],
+"loop": true,
+"name": &"w-death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hv2p7")
+}],
+"loop": true,
+"name": &"w-demage",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtwut")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8fgec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mqw6g")
+}],
+"loop": true,
+"name": &"w-walking",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hktoy"]
+radius = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_td28k"]
+radius = 6.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7ceva"]
+radius = 83.006
+
+[node name="zombie" type="CharacterBody2D"]
+script = ExtResource("1_h022x")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_y3q3b")
+animation = &"n-death"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_hktoy")
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+shape = SubResource("CircleShape2D_td28k")
+
+[node name="detection_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area"]
+shape = SubResource("CircleShape2D_7ceva")
+
+[connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]

@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://e6uw3ofiqtj7" path="res://scene/player.tscn" id="1_v1e4m"]
 [ext_resource type="Texture2D" uid="uid://ddliwmj3h7jf3" path="res://art/Organized separated sprites/Modular Small Building/Zombie-Tileset---_0091_Capa-92.png" id="2_rqond"]
-[ext_resource type="Resource" uid="uid://cjcrlgqwnp6oa" path="res://inventory/playerinv.tres" id="2_y6k6b"]
 [ext_resource type="Texture2D" uid="uid://cpg6a1ie4dujc" path="res://art/Organized separated sprites/Modular Small Building/Zombie-Tileset---_0092_Capa-93.png" id="3_73fi7"]
 [ext_resource type="Texture2D" uid="uid://b06yg83a3ig8w" path="res://art/Organized separated sprites/Modular Small Building/Zombie-Tileset---_0101_Capa-102.png" id="4_gf0ty"]
 [ext_resource type="Texture2D" uid="uid://btwwj8c47b1c2" path="res://art/Organized separated sprites/Modular Small Building/Zombie-Tileset---_0102_Capa-103.png" id="5_r67jn"]
@@ -59,6 +58,7 @@
 [ext_resource type="PackedScene" uid="uid://dp1jk72x4q8qw" path="res://scene/tractor.tscn" id="56_ypf3l"]
 [ext_resource type="PackedScene" uid="uid://jyfx3lq6yv1j" path="res://scene/medium_house.tscn" id="57_gi7mb"]
 [ext_resource type="PackedScene" uid="uid://bntpyxxkb82nl" path="res://inventory/Items/stick_collectable.tscn" id="58_y8i4s"]
+[ext_resource type="PackedScene" uid="uid://bjdurx4sh3nn3" path="res://scene/zombie.tscn" id="60_11ihs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tmxan"]
 texture = ExtResource("2_rqond")
@@ -1028,7 +1028,11 @@ position = Vector2(-1, 0)
 
 [node name="Player" parent="." instance=ExtResource("1_v1e4m")]
 position = Vector2(99, -11)
-inv = ExtResource("2_y6k6b")
+
+[node name="enemies" type="Node2D" parent="."]
+
+[node name="zombie" parent="enemies" instance=ExtResource("60_11ihs")]
+position = Vector2(-79, 26)
 
 [node name="shed" parent="." instance=ExtResource("43_6y7kg")]
 position = Vector2(-49, -90)
