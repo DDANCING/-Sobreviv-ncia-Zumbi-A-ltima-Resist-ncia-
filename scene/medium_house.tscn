@@ -1,9 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://4raqgeqjtuv5"]
+[gd_scene load_steps=5 format=3 uid="uid://jyfx3lq6yv1j"]
 
-[ext_resource type="Texture2D" uid="uid://dys67xxe0joca" path="res://art/Zombie Apocalypse Tileset Reference.png" id="1_egip6"]
+[ext_resource type="Texture2D" uid="uid://dys67xxe0joca" path="res://art/Zombie Apocalypse Tileset Reference.png" id="1_grguc"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wsvr1"]
-texture = ExtResource("1_egip6")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lby1y"]
+texture = ExtResource("1_grguc")
 separation = Vector2i(1, 3)
 1:1/0 = 0
 2:1/0 = 0
@@ -758,39 +758,22 @@ separation = Vector2i(1, 3)
 45:17/0 = 0
 46:17/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_8grra"]
-sources/0 = SubResource("TileSetAtlasSource_wsvr1")
+[sub_resource type="TileSet" id="TileSet_ddx7c"]
+sources/0 = SubResource("TileSetAtlasSource_lby1y")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_t7u3s"]
-size = Vector2(113, 122)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rey6f"]
+size = Vector2(96, 39)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_t4kst"]
-size = Vector2(31.625, 13.5)
-
-[node name="shed" type="Node2D"]
+[node name="medium_house" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_8grra")
+tile_set = SubResource("TileSet_ddx7c")
 format = 2
-layer_0/tile_data = PackedInt32Array(-5, 1572864, 9, 65531, 1572864, 10, 131067, 1572864, 11, 196603, 1572864, 12, -4, 1638400, 9, 65532, 1638400, 10, 131068, 1638400, 11, 196604, 1638400, 12, -65536, 1769472, 9, 0, 1769472, 10, 65536, 1769472, 11, 131072, 1769472, 12, -65535, 1835008, 9, 1, 1835008, 10, 65537, 1835008, 11, 131073, 1835008, 12, 131069, 1703936, 11, 196605, 1703936, 12, 131070, 1703936, 11, 196606, 1703936, 12, 131071, 1703936, 11, 196607, 1703936, 12, 65533, 1703936, 10, 65534, 1703936, 10, 65535, 1703936, 10, -3, 1703936, 9, -2, 1703936, 9, -1, 1703936, 9, -65539, 1638400, 8, -65538, 1703936, 8, -65537, 1769472, 8, -131075, 1638400, 8, -131074, 1703936, 8, -131073, 1769472, 8, -196611, 1638400, 8, -196610, 1703936, 8, -196609, 1769472, 8, -262147, 1638400, 8, -262146, 1703936, 8, -262145, 1769472, 8, -131071, 1835008, 9, -196607, 1835008, 9, -262143, 1835008, 9, -327679, 1835008, 8, -131072, 1769472, 8, -196608, 1769472, 8, -262144, 1769472, 8, -327680, 1769472, 8, -65540, 1638400, 8, -131076, 1638400, 8, -196612, 1638400, 8, -262148, 1638400, 8, -65541, 1572864, 9, -131077, 1572864, 9, -196613, 1572864, 9, -327682, 1703936, 8, -393217, 1769472, 7, -393218, 1703936, 7, -327681, 1769472, 8, -393216, 1835008, 8, -327684, 1572864, 8, -393219, 1638400, 7, -327683, 1638400, 8, -262149, 1572864, 8)
+layer_0/tile_data = PackedInt32Array(-131075, 65536, 1, -65539, 65536, 2, -3, 65536, 3, 65533, 65536, 4, 131069, 65536, 5, -131074, 131072, 1, -65538, 131072, 2, -2, 131072, 3, 65534, 262144, 4, 131070, 131072, 5, -131073, 196608, 1, -65537, 196608, 2, -1, 131072, 3, 65535, 196608, 4, 131071, 196608, 5, -196608, 262144, 1, -131072, 262144, 2, -196607, 327680, 1, -131071, 327680, 2, -196606, 393216, 1, -131070, 393216, 2, -65534, 393216, 3, 2, 393216, 4, 65538, 393216, 5, 1, 262144, 4, -65535, 131072, 3, -65536, 131072, 3, 0, 131072, 4, 65536, 131072, 5, 65537, 131072, 5)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-24.5, -15)
-shape = SubResource("RectangleShape2D_t7u3s")
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(-65.1875, 52.75)
-shape = SubResource("RectangleShape2D_t4kst")
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="."]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-position = Vector2(16.25, 52.5)
-shape = SubResource("RectangleShape2D_t4kst")
+position = Vector2(0, 12.5)
+shape = SubResource("RectangleShape2D_rey6f")

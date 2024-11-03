@@ -1,7 +1,8 @@
-[gd_scene load_steps=69 format=3 uid="uid://e6uw3ofiqtj7"]
+[gd_scene load_steps=70 format=3 uid="uid://e6uw3ofiqtj7"]
 
 [ext_resource type="Script" path="res://script/player.gd" id="1_b43e1"]
 [ext_resource type="Texture2D" uid="uid://bn6vptpbf5ag3" path="res://art/survivalgame-player-green.png" id="2_a1q7m"]
+[ext_resource type="PackedScene" uid="uid://1ifotkqei513" path="res://inventory/inv_ui.tscn" id="3_kq85x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tqs3j"]
 atlas = ExtResource("2_a1q7m")
@@ -562,7 +563,9 @@ shape = SubResource("CircleShape2D_4iyql")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
-limit_left = -1067
+limit_left = -1150
 limit_top = -441
 limit_right = 1127
 limit_bottom = 1272
+
+[node name="inv_UI" parent="." instance=ExtResource("3_kq85x")]

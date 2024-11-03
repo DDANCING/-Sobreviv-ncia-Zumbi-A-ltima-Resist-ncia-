@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://jacxcdtrepq2"]
 
-[ext_resource type="Script" path="res://scene/flames.gd" id="1_itvkm"]
+[ext_resource type="Script" path="res://script/flames.gd" id="1_itvkm"]
 [ext_resource type="Texture2D" uid="uid://dkda6suombd4h" path="res://art/flames/Fogo_1.png" id="1_omin3"]
 [ext_resource type="Texture2D" uid="uid://divar5omfxuat" path="res://art/flames/Fogo_2.png" id="2_an6k2"]
 [ext_resource type="Texture2D" uid="uid://b7u8fvbrxsjns" path="res://art/flames/Fogo_3.png" id="3_6a1li"]

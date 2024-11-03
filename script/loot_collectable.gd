@@ -1,11 +1,16 @@
 extends StaticBody2D
 
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
-	pass # Replace with function body.
+	fallfrombox()
+	
+func fallfrombox():
+	$AnimationPlayer.play("falling_drop")
+	await get_tree().create_timer(1.5).timeout
+	$AnimationPlayer.play("fade")
+	print("+1 loot")
+	await get_tree().create_timer(0.8).timeout
+	queue_free()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass

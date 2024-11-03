@@ -1,17 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://nf3ndtb3x2cv"]
+[gd_scene load_steps=8 format=3 uid="uid://cr8p6oi85etmy"]
 
-[ext_resource type="Texture2D" uid="uid://hv3wvo2gqsxd" path="res://art/Organized separated sprites/Pickable Items and Weapons/Zombie-Tileset---_0340_Capa-341.png" id="1_37tb2"]
-[ext_resource type="Script" path="res://script/loot_collectable.gd" id="1_qkpht"]
+[ext_resource type="Script" path="res://script/loot_collectable.gd" id="1_57itq"]
+[ext_resource type="Texture2D" uid="uid://b2kiwsfcv6r7v" path="res://art/Organized separated sprites/Pickable Items and Weapons/Zombie-Tileset---_0327_Capa-328.png" id="2_sj5i5"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ci2gd"]
-atlas = ExtResource("1_37tb2")
-region = Rect2(0, 0, 10, 10)
+[sub_resource type="AtlasTexture" id="AtlasTexture_4qadn"]
+atlas = ExtResource("2_sj5i5")
+region = Rect2(0, 0, 11, 14)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o6jev"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ci2gd")
+"texture": SubResource("AtlasTexture_4qadn")
 }],
 "loop": true,
 "name": &"loot",
@@ -105,7 +105,7 @@ _data = {
 }
 
 [node name="loot_collectable" type="StaticBody2D"]
-script = ExtResource("1_qkpht")
+script = ExtResource("1_57itq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.7, 0.7)
