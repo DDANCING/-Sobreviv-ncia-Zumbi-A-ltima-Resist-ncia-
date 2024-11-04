@@ -3,11 +3,14 @@ extends CharacterBody2D
 var speed = 50 # Velocidade normal
 var wander_speed = 25 # Velocidade ao vagar
 var health = 100
-var damage
+
 
 var dead = false
 var player_in_area = false
 var player
+
+@onready var bone = $bone_collectable
+@export var itemRes: InvItem
 
 # Variáveis para movimentação aleatória
 var random_direction = Vector2.ZERO
@@ -78,3 +81,43 @@ func update_animation(dir: Vector2):
 	else:
 		$AnimatedSprite2D.stop() 
 
+
+
+func _on_hitbox_area_entered(area):
+	var damage
+	if area.has_method("arrow_deal_damage"):
+		damage = 50 
+		take_damage(damage)
+		
+func take_damage(damage):
+	
+	health = health - damage
+	if health <= 0 and !dead:
+		death()
+		
+func death():
+	dead = true
+	$AnimatedSprite2D.play("s-death")
+	await get_tree().create_timer(0.6).timeout
+	drop_bone()
+	
+	$AnimatedSprite2D.visible = false
+	$hitbox/CollisionShape2D.disabled = true
+	$detection_area/CollisionShape2D.disabled = true
+	
+func drop_bone():
+	bone.visible = true 
+	$zombie_collect_area/CollisionShape2D.disabled = false
+	bone_collect()
+	
+func bone_collect():
+	await get_tree().create_timer(1.5).timeout
+	bone.visible = false
+	player.collect(itemRes)
+	queue_free()
+	
+
+
+func _on_zombie_collect_area_body_entered(body):
+	if body.has_method("player"):
+		player = body

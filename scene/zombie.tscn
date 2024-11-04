@@ -1,9 +1,10 @@
-[gd_scene load_steps=42 format=3 uid="uid://bjdurx4sh3nn3"]
+[gd_scene load_steps=45 format=3 uid="uid://bjdurx4sh3nn3"]
 
 [ext_resource type="Texture2D" uid="uid://bu6y6ar17gf3k" path="res://art/Organized separated sprites/Kid Zombie Animation Frames/Zombie-Tileset---_0436_Capa-437.png" id="1_amigb"]
 [ext_resource type="Script" path="res://script/zombie.gd" id="1_h022x"]
 [ext_resource type="Texture2D" uid="uid://dvvb1hoam2b7j" path="res://art/Organized separated sprites/Damaged Kid Zombie Animation Frames/Zombie-Tileset---_0446_Capa-447.png" id="1_pvrfp"]
 [ext_resource type="Texture2D" uid="uid://0s28ugfqhwnk" path="res://art/Organized separated sprites/Kid Zombie Animation Frames/Zombie-Tileset---_0437_Capa-438.png" id="2_fl1t8"]
+[ext_resource type="Resource" uid="uid://biy4h4kiukuxo" path="res://inventory/Items/bone.tres" id="2_l8key"]
 [ext_resource type="Texture2D" uid="uid://cyne3t4484g67" path="res://art/Organized separated sprites/Damaged Kid Zombie Animation Frames/Zombie-Tileset---_0447_Capa-448.png" id="2_oq3a1"]
 [ext_resource type="Texture2D" uid="uid://dstqu26pjedi5" path="res://art/Organized separated sprites/Kid Zombie Animation Frames/Zombie-Tileset---_0438_Capa-439.png" id="3_8cirm"]
 [ext_resource type="Texture2D" uid="uid://b0qi68pvfn3at" path="res://art/Organized separated sprites/Damaged Kid Zombie Animation Frames/Zombie-Tileset---_0445_Capa-446.png" id="3_og3oi"]
@@ -19,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://ckkx3luvbvy5w" path="res://art/Organized separated sprites/Damaged Kid Zombie Animation Frames/Zombie-Tileset---_0443_Capa-444.png" id="13_0j4x4"]
 [ext_resource type="Texture2D" uid="uid://dmbldvq6ca85i" path="res://art/Organized separated sprites/Damaged Kid Zombie Animation Frames/Zombie-Tileset---_0444_Capa-445.png" id="14_0vr3l"]
 [ext_resource type="Texture2D" uid="uid://l4ybld2dxwgc" path="res://art/Organized separated sprites/Damaged Kid Zombie Animation Frames/Zombie-Tileset---_0442_Capa-443.png" id="15_nomod"]
+[ext_resource type="PackedScene" uid="uid://cyqu8jc2878et" path="res://inventory/Items/bone_collectable.tscn" id="20_samgq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vd2sh"]
 atlas = ExtResource("1_pvrfp")
@@ -203,8 +205,12 @@ radius = 6.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_7ceva"]
 radius = 83.006
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_kilwk"]
+radius = 762.378
+
 [node name="zombie" type="CharacterBody2D"]
 script = ExtResource("1_h022x")
+itemRes = ExtResource("2_l8key")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_y3q3b")
@@ -223,5 +229,16 @@ shape = SubResource("CircleShape2D_td28k")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area"]
 shape = SubResource("CircleShape2D_7ceva")
 
+[node name="bone_collectable" parent="." instance=ExtResource("20_samgq")]
+visible = false
+position = Vector2(5, 5)
+
+[node name="zombie_collect_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="zombie_collect_area"]
+shape = SubResource("CircleShape2D_kilwk")
+
+[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
+[connection signal="body_entered" from="zombie_collect_area" to="." method="_on_zombie_collect_area_body_entered"]
