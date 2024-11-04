@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqwth01s5giy7"]
+
+[ext_resource type="Texture2D" uid="uid://c1heutrbdprea" path="res://art/Organized separated sprites/UI Elements/Zombie-Tileset---_0499_Capa-502.png" id="1_p3i4m"]
+
+[sub_resource type="Theme" id="Theme_xncbd"]
+
+[node name="Stamina_bar" type="Control"]
+modulate = Color(1, 1, 0, 1)
+self_modulate = Color(1, 1, 0, 1)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 11.0
+offset_top = -24.0
+offset_right = 11.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = -15.0
+offset_top = 4.0
+offset_right = -7.0
+offset_bottom = 41.0
+theme = SubResource("Theme_xncbd")
+max_value = 10.0
+fill_mode = 3
+show_percentage = false
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = -15.0
+offset_top = 4.0
+offset_right = -7.0
+offset_bottom = 41.0
+texture = ExtResource("1_p3i4m")

@@ -1,9 +1,10 @@
-[gd_scene load_steps=39 format=3 uid="uid://e6uw3ofiqtj7"]
+[gd_scene load_steps=40 format=3 uid="uid://e6uw3ofiqtj7"]
 
 [ext_resource type="Script" path="res://script/player.gd" id="1_b43e1"]
 [ext_resource type="Texture2D" uid="uid://bn6vptpbf5ag3" path="res://art/survivalgame-player-green.png" id="2_a1q7m"]
 [ext_resource type="Resource" uid="uid://cjcrlgqwnp6oa" path="res://inventory/playerinv.tres" id="2_gnur0"]
 [ext_resource type="PackedScene" uid="uid://1ifotkqei513" path="res://inventory/inv_ui.tscn" id="3_kq85x"]
+[ext_resource type="PackedScene" uid="uid://cqwth01s5giy7" path="res://scene/stamina_bar.tscn" id="5_d17gx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tqs3j"]
 atlas = ExtResource("2_a1q7m")
@@ -353,3 +354,9 @@ offset_right = 43.0
 offset_bottom = -14.0
 
 [node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="Stamina_bar" parent="." instance=ExtResource("5_d17gx")]
+offset_left = 147.0
+offset_top = 36.0
+offset_right = 147.0
+offset_bottom = 36.0
