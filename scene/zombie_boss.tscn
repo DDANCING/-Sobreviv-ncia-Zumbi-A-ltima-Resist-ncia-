@@ -1,0 +1,236 @@
+[gd_scene load_steps=43 format=3 uid="uid://d46evmcldcgq"]
+
+[ext_resource type="Texture2D" uid="uid://cpo4cy45hh72e" path="res://art/Organized separated sprites/Big Zombie Walking Animation Frames/Zombie-Tileset---_0412_Capa-413.png" id="1_2nvmd"]
+[ext_resource type="Script" path="res://scene/zombie_boss.gd" id="1_6ctw6"]
+[ext_resource type="Texture2D" uid="uid://dwdpftubf261k" path="res://art/Organized separated sprites/Big Zombie Walking Animation Frames/Zombie-Tileset---_0413_Capa-414.png" id="2_0v0ni"]
+[ext_resource type="Texture2D" uid="uid://bk4estjbvxxrm" path="res://art/Organized separated sprites/Damaged Big Zombie Animation Frames/Zombie-Tileset---_0428_Capa-429.png" id="2_ei747"]
+[ext_resource type="Texture2D" uid="uid://dp2bdirhi6dnl" path="res://art/Organized separated sprites/Big Zombie Walking Animation Frames/Zombie-Tileset---_0418_Capa-419.png" id="2_rqnhe"]
+[ext_resource type="Texture2D" uid="uid://ug6rf7u75cyk" path="res://art/Organized separated sprites/Big Zombie Walking Animation Frames/Zombie-Tileset---_0414_Capa-415.png" id="3_4vd6a"]
+[ext_resource type="Texture2D" uid="uid://fm7qdutnuyfq" path="res://art/Organized separated sprites/Big Zombie Walking Animation Frames/Zombie-Tileset---_0419_Capa-420.png" id="3_6fdcf"]
+[ext_resource type="Texture2D" uid="uid://c1k61qihrwy2n" path="res://art/Organized separated sprites/Damaged Big Zombie Animation Frames/Zombie-Tileset---_0429_Capa-430.png" id="3_barpo"]
+[ext_resource type="Texture2D" uid="uid://cbjlk2tbrk8vd" path="res://art/Organized separated sprites/Damaged Big Zombie Animation Frames/Zombie-Tileset---_0427_Capa-428.png" id="4_7vp3f"]
+[ext_resource type="Texture2D" uid="uid://s3tqwv3h8e8u" path="res://art/Organized separated sprites/Big Zombie Walking Animation Frames/Zombie-Tileset---_0420_Capa-421.png" id="4_mhlc7"]
+[ext_resource type="Texture2D" uid="uid://crb5f2np3qlw0" path="res://art/Organized separated sprites/Big Zombie Walking Animation Frames/Zombie-Tileset---_0415_Capa-416.png" id="8_0nvm5"]
+[ext_resource type="Texture2D" uid="uid://bs1nv3almhxju" path="res://art/Organized separated sprites/Damaged Big Zombie Animation Frames/Zombie-Tileset---_0422_Capa-423.png" id="8_u4vyd"]
+[ext_resource type="Texture2D" uid="uid://bll7khh7j4ntk" path="res://art/Organized separated sprites/Big Zombie Walking Animation Frames/Zombie-Tileset---_0416_Capa-417.png" id="9_572qv"]
+[ext_resource type="Texture2D" uid="uid://cwrx0wu85cfbl" path="res://art/Organized separated sprites/Damaged Big Zombie Animation Frames/Zombie-Tileset---_0423_Capa-424.png" id="9_yts6k"]
+[ext_resource type="Texture2D" uid="uid://bmyb4f0po2rnu" path="res://art/Organized separated sprites/Big Zombie Walking Animation Frames/Zombie-Tileset---_0417_Capa-418.png" id="10_am7g2"]
+[ext_resource type="Texture2D" uid="uid://00o586ks42vu" path="res://art/Organized separated sprites/Damaged Big Zombie Animation Frames/Zombie-Tileset---_0421_Capa-422.png" id="10_k23ch"]
+[ext_resource type="Texture2D" uid="uid://d2xhbdh3a62wh" path="res://art/Organized separated sprites/Damaged Big Zombie Animation Frames/Zombie-Tileset---_0425_Capa-426.png" id="14_u4dis"]
+[ext_resource type="Texture2D" uid="uid://28of8yd6nv6w" path="res://art/Organized separated sprites/Damaged Big Zombie Animation Frames/Zombie-Tileset---_0426_Capa-427.png" id="15_3c6gl"]
+[ext_resource type="Texture2D" uid="uid://bpflkc8r2s2t0" path="res://art/Organized separated sprites/Damaged Big Zombie Animation Frames/Zombie-Tileset---_0424_Capa-425.png" id="16_chbsv"]
+[ext_resource type="AudioStream" uid="uid://ci7omr15ml313" path="res://art/zombie-15965.mp3" id="20_k6byp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s73sd"]
+atlas = ExtResource("2_ei747")
+region = Rect2(0, 0, 16, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c1y03"]
+atlas = ExtResource("3_barpo")
+region = Rect2(0, 0, 16, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6mq8"]
+atlas = ExtResource("4_7vp3f")
+region = Rect2(0, 0, 16, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_srlxk"]
+atlas = ExtResource("2_rqnhe")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fx3l5"]
+atlas = ExtResource("3_6fdcf")
+region = Rect2(0, 0, 16, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rpilt"]
+atlas = ExtResource("4_mhlc7")
+region = Rect2(0, 0, 16, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wlyp"]
+atlas = ExtResource("8_u4vyd")
+region = Rect2(0, 0, 16, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5cj2c"]
+atlas = ExtResource("9_yts6k")
+region = Rect2(0, 0, 16, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p14u0"]
+atlas = ExtResource("10_k23ch")
+region = Rect2(0, 0, 16, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwbop"]
+atlas = ExtResource("1_2nvmd")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8nngk"]
+atlas = ExtResource("2_0v0ni")
+region = Rect2(0, 0, 16, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vaxuc"]
+atlas = ExtResource("3_4vd6a")
+region = Rect2(0, 0, 16, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eaqll"]
+atlas = ExtResource("14_u4dis")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5cmo"]
+atlas = ExtResource("15_3c6gl")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p0ogr"]
+atlas = ExtResource("16_chbsv")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kv1gu"]
+atlas = ExtResource("8_0nvm5")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ej2fe"]
+atlas = ExtResource("9_572qv")
+region = Rect2(0, 0, 16, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ocmhm"]
+atlas = ExtResource("10_am7g2")
+region = Rect2(0, 0, 16, 15)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bgfwn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s73sd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c1y03")
+}],
+"loop": true,
+"name": &"n-death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6mq8")
+}],
+"loop": true,
+"name": &"n-demage",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_srlxk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fx3l5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rpilt")
+}],
+"loop": true,
+"name": &"n-walking",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0wlyp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5cj2c")
+}],
+"loop": true,
+"name": &"s-death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p14u0")
+}],
+"loop": true,
+"name": &"s-demage",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rwbop")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8nngk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vaxuc")
+}],
+"loop": true,
+"name": &"s-walking",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eaqll")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5cmo")
+}],
+"loop": true,
+"name": &"w-death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p0ogr")
+}],
+"loop": true,
+"name": &"w-demage",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kv1gu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ej2fe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ocmhm")
+}],
+"loop": true,
+"name": &"w-walking",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kfpws"]
+radius = 17.0294
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j8imb"]
+radius = 18.2483
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jfytj"]
+radius = 124.064
+
+[node name="zombieBoss" type="CharacterBody2D"]
+script = ExtResource("1_6ctw6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(9.53674e-07, -1.90735e-06)
+scale = Vector2(2.15625, 1.92083)
+sprite_frames = SubResource("SpriteFrames_bgfwn")
+animation = &"s-walking"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_kfpws")
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+shape = SubResource("CircleShape2D_j8imb")
+
+[node name="detection_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area"]
+shape = SubResource("CircleShape2D_jfytj")
+
+[node name="audio_player" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_k6byp")
+
+[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]
+[connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]

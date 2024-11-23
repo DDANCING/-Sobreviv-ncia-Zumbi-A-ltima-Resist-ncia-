@@ -7,6 +7,10 @@ var player_state
 var stamina = 10.0
 var stamina_recovery_rate = 1.0  
 var is_sprinting = false
+var zombie_inattack_range = false
+var zombie_attack_cooldown = true
+var health = 100
+var player_alive = true
 
 # Variáveis de inventário e equipamento
 @export var inv: Inv
@@ -14,12 +18,31 @@ var bow_equiped = false
 var bow_cooldown = true
 var arrow = preload("res://scene/arrow.tscn")
 var mouse_location_from_player = null
+var menu_open = false
+var can_teleport = false  # Controla se o jogador pode teleportar
+var target_position = Vector2()  # Posição de destino do teletransporte
+@onready var audio_player = $audio_player
 
-# Referência da barra de stamina
-@onready var stamina_bar = $Stamina_bar/ProgressBar  # Atualize o caminho se necessário
+
+# Referência da barra
+@onready var stamina_bar = $Bars/StaminaBar
+@onready var health_bar = $Bars/HealthBar
 
 func _physics_process(delta):
-	# Calcular posição do mouse
+	zombie_attack()
+	if can_teleport and Input.is_action_just_pressed("e"):  # "e" é a tecla de interação
+		position = target_position  # Move o jogador para o destino
+		print("Teletransportado para:", target_position)
+	
+	if health <= 0 and player_alive:
+		player_alive = false
+		health = 0
+		print("player has been killed")
+		$AnimatedSprite2D.play("death")
+		
+		get_tree().change_scene_to_file("res://scene/menu.tscn")
+		self.queue_free()
+		
 	mouse_location_from_player = get_global_mouse_position() - self.position
 	
 	var direction = Input.get_vector("left", "right", "up", "down")
@@ -56,8 +79,8 @@ func _physics_process(delta):
 	elif stamina < 3:
 		current_speed = speed * 0.75  # Velocidade parcialmente reduzida até stamina >= 3
 	
-	# Atualizar a barra de stamina
-	stamina_bar.value = stamina  # Sincroniza o valor da barra com a stamina atual
+
+	stamina_bar.value = stamina  
 	
 	# Movimento do jogador
 	velocity = direction * current_speed
@@ -125,7 +148,8 @@ func play_anim(dir):
 			$AnimatedSprite2D.play("nw-attack")
 
 func player():
-	pass
+	audio_player.stream = preload("res://art/zombie-screaming-207590.mp3")
+	audio_player.play()
 
 func collect(item):
 	if inv:
@@ -133,3 +157,59 @@ func collect(item):
 		print("Item coletado e adicionado ao inventário:", item)
 	else:
 		print("Erro: 'inv' não foi inicializado. Certifique-se de que o inventário está configurado.")
+		
+
+func _on_area_2d_body_entered(body):
+	if body.name.begins_with("zombie"):  # Verifica se o nome começa com "zombie"
+		print(body.name, "entered attack range")
+		zombie_inattack_range = true
+		
+func _on_area_2d_body_exited(body):
+	if body.name.begins_with("zombie"):  # Verifica se o nome começa com "zombie"
+		print(body.name, "exited attack range")
+		zombie_inattack_range = false
+
+func zombie_attack():
+	if zombie_inattack_range and zombie_attack_cooldown:
+		health = health - 20
+		zombie_attack_cooldown = false
+		$attack_cooldown.start()
+		print(health)
+		health_bar.value = health
+
+
+func _on_attack_cooldown_timeout():
+	zombie_attack_cooldown = true
+
+
+func _input(event):
+	# Verifica se o evento é a ação "ui_cancel" (ESC pressionado)
+	if event.is_action_pressed("ui_cancel"):
+		toggle_menu_visibility()
+
+func toggle_menu_visibility():
+	# Alterna a visibilidade do menu
+	var menu = $Menu
+	menu.visible = not menu.visible
+
+
+func _on_exit_body_entered(body):
+	if body.name == "player":  # Garante que o corpo detectado é o jogador
+		can_teleport = true
+		var teleport_area = body.get_node("TeleportArea2")  # Substitua pelo nó correspondente
+		target_position = teleport_area.global_position  # Define o destino
+		print("Você pode teleportar pressionando e!")
+
+
+
+func _on_entry_body_entered(body):
+	if body.name == "Player":  # Garante que o corpo detectado é o jogador
+		can_teleport = false
+		target_position = Vector2()  # Reseta a posição de destino
+		print("Teletransporte cancelado.")
+		
+
+
+func _on_door_body_entered(body):
+	if body.is_in_group("player"):
+		body.set_position($Point)
