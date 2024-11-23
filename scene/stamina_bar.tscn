@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://cqwth01s5giy7"]
 
-[ext_resource type="Texture2D" uid="uid://c1heutrbdprea" path="res://art/Organized separated sprites/UI Elements/Zombie-Tileset---_0499_Capa-502.png" id="1_p3i4m"]
+[sub_resource type="Theme" id="Theme_4p8gs"]
 
 [sub_resource type="Theme" id="Theme_xncbd"]
 
-[node name="Stamina_bar" type="Control"]
+[node name="Bars" type="Control"]
 modulate = Color(1, 1, 0, 1)
 self_modulate = Color(1, 1, 0, 1)
 layout_mode = 3
@@ -18,21 +18,25 @@ offset_bottom = -24.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
+[node name="HealthBar" type="ProgressBar" parent="."]
+modulate = Color(1, 0.227451, 0, 1)
+self_modulate = Color(1, 0.227451, 0, 1)
 layout_mode = 0
-offset_left = -15.0
-offset_top = 4.0
-offset_right = -7.0
-offset_bottom = 41.0
-theme = SubResource("Theme_xncbd")
-max_value = 10.0
-fill_mode = 3
+offset_left = -19.0
+offset_top = 20.0
+offset_right = 11.0
+offset_bottom = 24.0
+scale = Vector2(0.5, 0.5)
+theme = SubResource("Theme_4p8gs")
 show_percentage = false
 
-[node name="NinePatchRect" type="NinePatchRect" parent="."]
+[node name="StaminaBar" type="ProgressBar" parent="."]
 layout_mode = 0
-offset_left = -15.0
-offset_top = 4.0
-offset_right = -7.0
-offset_bottom = 41.0
-texture = ExtResource("1_p3i4m")
+offset_left = -19.0
+offset_top = 22.0
+offset_right = 11.0
+offset_bottom = 26.0
+scale = Vector2(0.5, 0.5)
+theme = SubResource("Theme_xncbd")
+max_value = 10.0
+show_percentage = false

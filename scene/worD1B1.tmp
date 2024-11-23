@@ -1,11 +1,10 @@
-[gd_scene load_steps=26 format=3 uid="uid://51me5gniyq41"]
+[gd_scene load_steps=27 format=3 uid="uid://51me5gniyq41"]
 
 [ext_resource type="Script" path="res://scene/world.gd" id="1_sk6jy"]
 [ext_resource type="PackedScene" uid="uid://e6uw3ofiqtj7" path="res://scene/player.tscn" id="1_v1e4m"]
 [ext_resource type="PackedScene" uid="uid://bbdty73wj4ub6" path="res://scene/zombie_big_boss.tscn" id="3_wg0nd"]
 [ext_resource type="PackedScene" uid="uid://bty1ma3ppnmxh" path="res://scene/tile_map.tscn" id="18_g1pvi"]
 [ext_resource type="PackedScene" uid="uid://csu6ac6b2sy44" path="res://scene/cliffside_transition_pointer.tscn" id="19_hobgt"]
-[ext_resource type="PackedScene" uid="uid://blsx1vnxgu6s7" path="res://scene/door.tscn" id="21_alkeg"]
 [ext_resource type="PackedScene" uid="uid://4raqgeqjtuv5" path="res://scene/shed.tscn" id="43_6y7kg"]
 [ext_resource type="PackedScene" uid="uid://cshb225hau86p" path="res://scene/zombie_loot_objects.tscn" id="44_0e01u"]
 [ext_resource type="PackedScene" uid="uid://bri0aromnrnt7" path="res://scene/tree.tscn" id="45_7aopq"]
@@ -34,13 +33,18 @@ size = Vector2(2, 71)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l3rbd"]
 size = Vector2(57, 6)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aup0m"]
+size = Vector2(16, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jjgum"]
+size = Vector2(20, 16)
+
 [node name="world" type="Node2D"]
 position = Vector2(-1, 0)
 script = ExtResource("1_sk6jy")
 
 [node name="Player" parent="." instance=ExtResource("1_v1e4m")]
-position = Vector2(101, -10)
-inv = null
+position = Vector2(99, -11)
 
 [node name="enemies" type="Node2D" parent="."]
 
@@ -374,18 +378,19 @@ polygon = PackedVector2Array(-96, -40, -97, -79, -51, -78, -48, -33, -17, -33, -
 
 [node name="cliffside_transition_pointer" parent="." instance=ExtResource("19_hobgt")]
 
-[node name="door" parent="." instance=ExtResource("21_alkeg")]
-position = Vector2(-980, 56)
-script = null
+[node name="exit" type="Area2D" parent="."]
+position = Vector2(-732, -21)
 
-[node name="Sprite2D" parent="door" index="0"]
-position = Vector2(3, 1)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="exit"]
+shape = SubResource("RectangleShape2D_aup0m")
 
-[node name="CollisionShape2D" parent="door" index="1"]
-position = Vector2(3, 16)
+[node name="entry" type="Area2D" parent="."]
+position = Vector2(-728, 82)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="entry"]
+shape = SubResource("RectangleShape2D_jjgum")
 
 [connection signal="body_entered" from="cliffside_transition_pointer" to="." method="_on_cliffside_transition_pointer_body_entered"]
 [connection signal="body_exited" from="cliffside_transition_pointer" to="." method="_on_cliffside_transition_pointer_body_exited"]
-[connection signal="body_entered" from="door" to="." method="_on_door_body_entered"]
-
-[editable path="door"]
+[connection signal="body_entered" from="exit" to="Player" method="_on_exit_body_entered"]
+[connection signal="body_entered" from="entry" to="Player" method="_on_entry_body_entered"]

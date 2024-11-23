@@ -1,10 +1,9 @@
 extends CharacterBody2D
 
-var speed = 50 # Velocidade normal
-var wander_speed = 25 # Velocidade ao vagar
-var health = 100
+var speed = 20 # Velocidade normal
+var wander_speed = 10 # Velocidade ao vagar
+var health = 2000
 var player_inattack_zone = false
-
 
 var dead = false
 var player_in_area = false
@@ -31,13 +30,8 @@ func _physics_process(delta):
 		if player_in_area:
 			# Move o personagem em direção ao jogador
 			var direction = (player.position - position).normalized() # Normaliza a direção
-			
-			# Atualiza a posição com base na direção e na velocidade
 			position += direction * speed * delta
-			
-			# Atualiza a animação com base na direção do jogador
 			update_animation(direction)
-		
 		else:
 			# Movimentação aleatória quando não há jogador
 			random_timer -= delta
@@ -46,7 +40,6 @@ func _physics_process(delta):
 				random_timer = change_direction_time # Reinicia o temporizador
 
 			position += random_direction * wander_speed * delta # Move na direção aleatória
-			# Atualiza a animação para a movimentação aleatória
 			update_animation(random_direction)
 			
 		move_and_slide()
@@ -57,9 +50,8 @@ func _on_detection_area_body_entered(body):
 	if body.has_method("player"): # Verifica se o corpo é um jogador
 		player_in_area = true
 		player = body
-		audio_player.stream = preload("res://art/zombie-screaming-207590.mp3")
+		audio_player.stream = preload("res://art/zombie-15965.mp3")
 		audio_player.play()
-
 
 func _on_detection_area_body_exited(body):
 	if body.has_method("player"): # Verifica se o corpo é um jogador
@@ -89,60 +81,49 @@ func update_animation(dir: Vector2):
 	else:
 		$AnimatedSprite2D.stop() 
 
-
-
 func _on_hitbox_area_entered(area):
-	var damage
-	if area.has_method("arrow_deal_damage"):
-		damage = 50 
-		take_damage(damage)
-		
+	if !dead and area.has_method("arrow_deal_damage"):
+		take_damage(40)
+
 func take_damage(damage):
-	
-	health = health - damage
-	if health <= 0 and !dead:
+	if dead:
+		return
+	health -= damage
+	if health <= 0:
 		death()
-		
+	else:
+		play_damage_animation()
+
+func play_damage_animation():
+	if random_direction.y < 0:
+		$AnimatedSprite2D.play("n-damage")
+	elif random_direction.y > 0:
+		$AnimatedSprite2D.play("s-damage")
+	else:
+		$AnimatedSprite2D.play("w-damage")
+
 func death():
 	dead = true
 	$AnimatedSprite2D.play("s-death")
 	await get_tree().create_timer(0.6).timeout
-	drop_bone()
 	
 	$AnimatedSprite2D.visible = false
 	$hitbox/CollisionShape2D.disabled = true
 	$detection_area/CollisionShape2D.disabled = true
-	
-func drop_bone():
-	bone.visible = true 
-	$zombie_collect_area/CollisionShape2D.disabled = false
-	bone_collect()
-	
-func bone_collect():
-	await get_tree().create_timer(1.5).timeout
-	bone.visible = false
-	player.collect(itemRes)
 	queue_free()
 	
-
-
-func _on_zombie_collect_area_body_entered(body):
-	if body.has_method("player"):
-		player = body
-
-
 func _on_hitbox_body_entered(body):
-	if body.has_method("player"):
+	if !dead and body.has_method("player"):
 		player_inattack_zone = true
-
+		
 
 func _on_hitbox_body_exited(body):
 	if body.has_method("player"):
 		player_inattack_zone = false
-		
+
 func deal_with_damage():
-	if player_inattack_zone and global.player_current_attack == true:
-		health = health -20
+	if !dead and player_inattack_zone and global.player_current_attack:
+		take_damage(50)
 		print("zombie health = ", health)
 		if health <= 0:
-			self.queue_free()
+			queue_free()

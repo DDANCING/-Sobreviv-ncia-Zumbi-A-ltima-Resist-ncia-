@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://e6uw3ofiqtj7"]
+[gd_scene load_steps=41 format=3 uid="uid://e6uw3ofiqtj7"]
 
 [ext_resource type="Script" path="res://script/player.gd" id="1_b43e1"]
 [ext_resource type="Texture2D" uid="uid://bn6vptpbf5ag3" path="res://art/survivalgame-player-green.png" id="2_a1q7m"]
@@ -326,6 +326,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_4iyql"]
 radius = 3.60555
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_1tluo"]
+radius = 9.0
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_b43e1")
 inv = ExtResource("2_gnur0")
@@ -353,10 +356,25 @@ offset_top = -78.0
 offset_right = 43.0
 offset_bottom = -14.0
 
+[node name="Bars" parent="." instance=ExtResource("5_d17gx")]
+offset_left = 12.0
+offset_top = -31.0
+offset_right = 12.0
+offset_bottom = -31.0
+
 [node name="Marker2D" type="Marker2D" parent="."]
 
-[node name="Stamina_bar" parent="." instance=ExtResource("5_d17gx")]
-offset_left = 147.0
-offset_top = 36.0
-offset_right = 147.0
-offset_bottom = 36.0
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_1tluo")
+
+[node name="attack_cooldown" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="audio_player" type="AudioStreamPlayer" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="attack_cooldown" to="." method="_on_attack_cooldown_timeout"]
